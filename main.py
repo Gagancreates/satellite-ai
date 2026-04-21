@@ -1,5 +1,5 @@
 import os
-from modules.detection import load_eurosat_samples, run_detection_pipeline
+from modules.detection import run_detection_pipeline
 from modules.change_detection import run_change_detection_pipeline
 from modules.report_generator import run_report_pipeline
 
@@ -10,30 +10,24 @@ def main():
     print("=" * 50)
 
     os.makedirs("outputs", exist_ok=True)
-    os.makedirs("data/samples", exist_ok=True)
 
-    # Step 1 — Load data
-    print("\n[1/4] Loading EuroSAT samples...")
-    image_paths = load_eurosat_samples(n_per_class=1)
-    print(f"Loaded {len(image_paths)} images")
+    before_path = "before.jpg"
+    after_path = "after.png"
+    assert os.path.exists(before_path), "before.jpg not found in repo root"
+    assert os.path.exists(after_path), "after.png not found in repo root"
 
-    before_path = "data/samples/before.png"
-    after_path = "data/samples/after.png"
-    assert os.path.exists(before_path), "before.png missing"
-    assert os.path.exists(after_path), "after.png missing"
-
-    # Step 2 — Object Detection
-    print("\n[2/4] Running YOLOv8 object detection...")
-    detections = run_detection_pipeline(image_paths)
+    # Step 1 — Object Detection on both images
+    print("\n[1/3] Running YOLOv8-OBB object detection...")
+    detections = run_detection_pipeline([before_path, after_path])
     print(f"Detected {detections['total_objects_detected']} objects")
 
-    # Step 3 — Change Detection (loads Qwen2-VL here — takes 1-2 min first time)
-    print("\n[3/4] Running Qwen2-VL change detection...")
+    # Step 2 — Change Detection (loads Qwen2-VL — takes 1-2 min first time)
+    print("\n[2/3] Running Qwen2-VL change detection...")
     change_stats = run_change_detection_pipeline(before_path, after_path)
     print(f"Severity: {change_stats['change_severity']}")
 
-    # Step 4 — Report Generation (reuses already-loaded Qwen2-VL, no reload)
-    print("\n[4/4] Generating analytical report...")
+    # Step 3 — Report Generation (reuses already-loaded Qwen2-VL, no reload)
+    print("\n[3/3] Generating analytical report...")
     report = run_report_pipeline(
         detections_path="outputs/detections.json",
         change_stats_path="outputs/change_stats.json",
@@ -46,8 +40,8 @@ def main():
     print("=" * 50)
 
     outputs = [
+        "outputs/annotated.jpg",
         "outputs/detections.json",
-        "outputs/detection_viz.png",
         "outputs/class_distribution.png",
         "outputs/change_stats.json",
         "outputs/change_mask.png",

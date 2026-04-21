@@ -97,8 +97,8 @@ def run_detection_pipeline(image_paths, output_dir="outputs"):
                     "bbox": [x1, y1, x2, y2]  # [x1, y1, x2, y2] in pixels
                 })
 
-            class_distribution[class_name] = class_distribution.get(class_name, 0) + 1
-            total_objects += 1
+                class_distribution[class_name] = class_distribution.get(class_name, 0) + 1
+                total_objects += 1
 
         all_detections.append({
             "image_path": image_path,
@@ -126,10 +126,10 @@ def run_detection_pipeline(image_paths, output_dir="outputs"):
             save_image_with_boxes(
                 image_paths[0],
                 all_detections[0]["detections"],
-                os.path.join(output_dir, "detection_viz.png")
+                os.path.join(output_dir, "annotated.jpg")
             )
         else:
-            Image.open(image_paths[0]).save(os.path.join(output_dir, "detection_viz.png"))
+            Image.open(image_paths[0]).save(os.path.join(output_dir, "annotated.jpg"))
 
     if class_distribution:
         save_class_distribution(class_distribution, os.path.join(output_dir, "class_distribution.png"))
