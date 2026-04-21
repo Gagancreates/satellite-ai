@@ -122,14 +122,10 @@ def run_detection_pipeline(image_paths, output_dir="outputs"):
         json.dump(output, f, indent=2)
 
     if image_paths:
-        if all_detections[0]["detections"]:
-            save_image_with_boxes(
-                image_paths[0],
-                all_detections[0]["detections"],
-                os.path.join(output_dir, "annotated.jpg")
-            )
-        else:
-            Image.open(image_paths[0]).save(os.path.join(output_dir, "annotated.jpg"))
+        # Annotate last image (after.png) — richer detections
+        viz_results = model(image_paths[-1], verbose=False)
+        annotated = viz_results[-1].plot()
+        Image.fromarray(annotated).save(os.path.join(output_dir, "annotated.jpg"))
 
     if class_distribution:
         save_class_distribution(class_distribution, os.path.join(output_dir, "class_distribution.png"))
