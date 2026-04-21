@@ -1,95 +1,352 @@
 {
-  "total_images_analyzed": 10,
-  "total_objects_detected": 10,
-  "average_confidence": 0.3126,
+  "total_images_analyzed": 2,
+  "total_objects_detected": 33,
+  "average_confidence": 0.8439,
   "class_distribution": {
-    "tennis court": 5,
-    "basketball court": 1,
-    "baseball diamond": 4
+    "plane": 33
   },
   "per_image_results": [
     {
-      "image_path": "data/samples/AnnualCrop_0.png",
-      "objects_detected": 1,
+      "image_path": "before.jpg",
+      "objects_detected": 2,
       "detections": [
         {
-          "class": "tennis court",
-          "confidence": 0.2885,
+          "class": "plane",
+          "confidence": 0.8815,
           "bbox": [
-            5.81,
-            0.43,
-            122.13,
-            92.87
+            1825.15,
+            184.3,
+            1877.13,
+            243.52
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.8406,
+          "bbox": [
+            1907.0,
+            95.6,
+            1973.32,
+            156.16
           ]
         }
       ]
     },
     {
-      "image_path": "data/samples/Forest_0.png",
-      "objects_detected": 0,
-      "detections": []
-    },
-    {
-      "image_path": "data/samples/HerbaceousVegetation_0.png",
-      "objects_detected": 0,
-      "detections": []
-    },
-    {
-      "image_path": "data/samples/Highway_0.png",
-      "objects_detected": 0,
-      "detections": []
-    },
-    {
-      "image_path": "data/samples/Industrial_0.png",
-      "objects_detected": 0,
-      "detections": []
-    },
-    {
-      "image_path": "data/samples/Pasture_0.png",
-      "objects_detected": 1,
+      "image_path": "after.png",
+      "objects_detected": 31,
       "detections": [
         {
-          "class": "basketball court",
-          "confidence": 0.3246,
+          "class": "plane",
+          "confidence": 0.9198,
           "bbox": [
-            512.63,
-            564.87,
-            634.03,
-            637.62
+            687.98,
+            265.36,
+            764.69,
+            343.51
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.9121,
+          "bbox": [
+            757.87,
+            268.47,
+            823.11,
+            336.31
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.9048,
+          "bbox": [
+            503.82,
+            390.97,
+            582.6,
+            469.64
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.9032,
+          "bbox": [
+            96.87,
+            693.09,
+            159.9,
+            751.84
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.9031,
+          "bbox": [
+            723.17,
+            124.24,
+            798.37,
+            199.38
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.8998,
+          "bbox": [
+            365.46,
+            517.17,
+            432.4,
+            582.93
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.8968,
+          "bbox": [
+            86.24,
+            468.1,
+            125.71,
+            503.93
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.8964,
+          "bbox": [
+            866.62,
+            389.23,
+            941.16,
+            466.07
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.8919,
+          "bbox": [
+            797.75,
+            240.74,
+            876.73,
+            312.62
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.8874,
+          "bbox": [
+            245.02,
+            727.33,
+            301.7,
+            785.06
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.8831,
+          "bbox": [
+            624.43,
+            232.95,
+            687.42,
+            299.34
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.8807,
+          "bbox": [
+            909.36,
+            88.58,
+            940.23,
+            125.01
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.8778,
+          "bbox": [
+            127.26,
+            372.43,
+            181.49,
+            422.24
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.8694,
+          "bbox": [
+            950.43,
+            43.59,
+            994.25,
+            84.03
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.8642,
+          "bbox": [
+            302.85,
+            288.71,
+            347.98,
+            334.34
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.8616,
+          "bbox": [
+            933.38,
+            72.47,
+            976.7,
+            115.32
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.8602,
+          "bbox": [
+            962.62,
+            11.81,
+            998.41,
+            44.5
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.8585,
+          "bbox": [
+            565.67,
+            583.85,
+            613.24,
+            628.32
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.8473,
+          "bbox": [
+            431.55,
+            556.37,
+            497.38,
+            621.04
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.8441,
+          "bbox": [
+            84.89,
+            531.36,
+            115.43,
+            557.98
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.836,
+          "bbox": [
+            509.22,
+            311.01,
+            552.2,
+            351.78
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.8353,
+          "bbox": [
+            556.96,
+            210.74,
+            596.6,
+            252.55
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.8272,
+          "bbox": [
+            454.11,
+            630.61,
+            500.49,
+            674.5
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.8159,
+          "bbox": [
+            844.38,
+            51.42,
+            888.32,
+            93.06
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.801,
+          "bbox": [
+            63.64,
+            596.78,
+            100.39,
+            627.2
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.7945,
+          "bbox": [
+            734.38,
+            567.66,
+            785.18,
+            618.61
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.794,
+          "bbox": [
+            500.34,
+            863.11,
+            531.58,
+            890.93
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.7709,
+          "bbox": [
+            508.1,
+            913.57,
+            542.69,
+            943.96
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.7493,
+          "bbox": [
+            601.46,
+            977.55,
+            635.73,
+            1009.49
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.6696,
+          "bbox": [
+            94.5,
+            421.03,
+            121.3,
+            443.4
+          ]
+        },
+        {
+          "class": "plane",
+          "confidence": 0.5698,
+          "bbox": [
+            997.11,
+            251.8,
+            1027.42,
+            304.33
           ]
         }
       ]
-    },
-    {
-      "image_path": "data/samples/PermanentCrop_0.png",
-      "objects_detected": 1,
-      "detections": [
-        {
-          "class": "baseball diamond",
-          "confidence": 0.3246,
-          "bbox": [
-            -30.1,
-            232.81,
-            168.41,
-            422.99
-          ]
-        }
-      ]
-    },
-    {
-      "image_path": "data/samples/Residential_0.png",
-      "objects_detected": 0,
-      "detections": []
-    },
-    {
-      "image_path": "data/samples/River_0.png",
-      "objects_detected": 0,
-      "detections": []
-    },
-    {
-      "image_path": "data/samples/SeaLake_0.png",
-      "objects_detected": 0,
-      "detections": []
     }
   ]
 }
