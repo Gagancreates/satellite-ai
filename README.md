@@ -83,7 +83,7 @@ python test_phase4.py   # Qwen2-VL report generation
 ## Sample Outputs
 
 ### Object Detection
-![Detection Output](outputs/annotated.png)
+![Detection Output](outputs/annotated.jpg)
 
 ### Class Distribution
 ![Class Distribution](outputs/class_distribution.png)
