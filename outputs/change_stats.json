@@ -1,0 +1,11 @@
+{
+  "change_detected": true,
+  "change_severity": "low",
+  "changed_area_percent": 10,
+  "primary_change_type": "building addition",
+  "detailed_description": "There is a new building in the after image that was not present in the before image.",
+  "before_description": "The before image shows a clear and unobstructed view of the area.",
+  "after_description": "The after image shows a new building on the right side of the area.",
+  "image_before": "data/samples/before.png",
+  "image_after": "data/samples/after.png"
+}

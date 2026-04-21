@@ -1,0 +1,95 @@
+{
+  "total_images_analyzed": 10,
+  "total_objects_detected": 10,
+  "average_confidence": 0.3126,
+  "class_distribution": {
+    "tennis court": 5,
+    "basketball court": 1,
+    "baseball diamond": 4
+  },
+  "per_image_results": [
+    {
+      "image_path": "data/samples/AnnualCrop_0.png",
+      "objects_detected": 1,
+      "detections": [
+        {
+          "class": "tennis court",
+          "confidence": 0.2885,
+          "bbox": [
+            5.81,
+            0.43,
+            122.13,
+            92.87
+          ]
+        }
+      ]
+    },
+    {
+      "image_path": "data/samples/Forest_0.png",
+      "objects_detected": 0,
+      "detections": []
+    },
+    {
+      "image_path": "data/samples/HerbaceousVegetation_0.png",
+      "objects_detected": 0,
+      "detections": []
+    },
+    {
+      "image_path": "data/samples/Highway_0.png",
+      "objects_detected": 0,
+      "detections": []
+    },
+    {
+      "image_path": "data/samples/Industrial_0.png",
+      "objects_detected": 0,
+      "detections": []
+    },
+    {
+      "image_path": "data/samples/Pasture_0.png",
+      "objects_detected": 1,
+      "detections": [
+        {
+          "class": "basketball court",
+          "confidence": 0.3246,
+          "bbox": [
+            512.63,
+            564.87,
+            634.03,
+            637.62
+          ]
+        }
+      ]
+    },
+    {
+      "image_path": "data/samples/PermanentCrop_0.png",
+      "objects_detected": 1,
+      "detections": [
+        {
+          "class": "baseball diamond",
+          "confidence": 0.3246,
+          "bbox": [
+            -30.1,
+            232.81,
+            168.41,
+            422.99
+          ]
+        }
+      ]
+    },
+    {
+      "image_path": "data/samples/Residential_0.png",
+      "objects_detected": 0,
+      "detections": []
+    },
+    {
+      "image_path": "data/samples/River_0.png",
+      "objects_detected": 0,
+      "detections": []
+    },
+    {
+      "image_path": "data/samples/SeaLake_0.png",
+      "objects_detected": 0,
+      "detections": []
+    }
+  ]
+}
