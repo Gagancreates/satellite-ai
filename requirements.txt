@@ -1,0 +1,12 @@
+ultralytics
+transformers
+accelerate
+torchvision
+Pillow
+matplotlib
+numpy
+scipy
+torch
+fpdf2
+qwen-vl-utils
+torchgeo
