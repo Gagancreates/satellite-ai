@@ -65,7 +65,8 @@ def run_detection_pipeline(image_paths, output_dir="outputs"):
     """
     os.makedirs(output_dir, exist_ok=True)
 
-    model = YOLO("yolov8n.pt")  # downloads automatically on first run (~6MB)
+    # OBB model pretrained on DOTA — 15 aerial classes (plane, ship, vehicle, etc.)
+    model = YOLO("yolov8n-obb.pt")
 
     all_detections = []
     class_distribution = {}
@@ -76,17 +77,25 @@ def run_detection_pipeline(image_paths, output_dir="outputs"):
         result = results[0]
 
         image_detections = []
-        for box in result.boxes:
-            class_id = int(box.cls.item())
-            class_name = model.names[class_id]
-            confidence = round(float(box.conf.item()), 4)
-            bbox = [round(float(x), 2) for x in box.xyxy[0].tolist()]
+        # OBB models use result.obb instead of result.boxes
+        obb = result.obb
+        if obb is not None:
+            for i in range(len(obb)):
+                class_id = int(obb.cls[i].item())
+                class_name = model.names[class_id]
+                confidence = round(float(obb.conf[i].item()), 4)
+                # Convert OBB corners to axis-aligned bbox [x1, y1, x2, y2]
+                corners = obb.xyxyxyxy[i].cpu().numpy().reshape(4, 2)
+                x1 = round(float(corners[:, 0].min()), 2)
+                y1 = round(float(corners[:, 1].min()), 2)
+                x2 = round(float(corners[:, 0].max()), 2)
+                y2 = round(float(corners[:, 1].max()), 2)
 
-            image_detections.append({
-                "class": class_name,
-                "confidence": confidence,
-                "bbox": bbox  # [x1, y1, x2, y2] in pixels
-            })
+                image_detections.append({
+                    "class": class_name,
+                    "confidence": confidence,
+                    "bbox": [x1, y1, x2, y2]  # [x1, y1, x2, y2] in pixels
+                })
 
             class_distribution[class_name] = class_distribution.get(class_name, 0) + 1
             total_objects += 1
